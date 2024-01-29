@@ -1,0 +1,65 @@
+{
+  "TheWitch:cLanguageProgramBegin": {
+    "NAME": "魔导书",
+    "FLAVOR": "魔女惯用的魔导书，其中包含元素反应的奥秘。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，将一张 #y岩元素 卡牌添加到你的手牌。"
+    ]
+  },
+  "TheWitch:TestTriggerElement": {
+    "NAME": "测试触发元素反应的遗物",
+    "FLAVOR": "java.lang.NullPointerException",
+    "DESCRIPTIONS": [
+      "每次触发 #y元素反应 都会输出对应触发的类型。"
+    ]
+  },
+  "TheWitch:HighLevelMagicBook": {
+    "NAME": "很高级的魔导书",
+    "FLAVOR": "“总之看着很高级”—魔女",
+    "DESCRIPTIONS": [
+      "每回合开始时从三张随机 #y元素 牌中选一张放入手牌，这张元素牌在本回合的耗能为 #b0 。"
+    ]
+  },
+  "TheWitch:NaturalQuenchedStaff": {
+    "NAME": "自然淬炼之杖",
+    "FLAVOR": "来自于大自然的鬼斧神工。",
+    "DESCRIPTIONS": [
+      "战斗开始时获得等同你 #y元素牌 数量的 #b元素精通 。"
+    ]
+  },
+  "TheWitch:TheLastCoin": {
+    "NAME": "最后的一枚硬币",
+    "FLAVOR": "直到万不可以，绝对不会拿出手。",
+    "DESCRIPTIONS": [
+      "每当你触发 #r元素反应 时获得 #b3 #y金币 。"
+    ]
+  },
+  "TheWitch:BlackCat": {
+    "NAME": "豆之助",
+    "FLAVOR": "是灵魂的碎片，是黑暗面的化身。我们之间的关系密不可分。它还会对周围散发黑暗物质...",
+    "DESCRIPTIONS": [
+      "每打出一张 #y元素牌 就获得 #b1 点临时 #y元素精通 。"
+    ]
+  },
+  "TheWitch:Fructose": {
+    "NAME": "果儿糖",
+    "FLAVOR": "感觉...不如开心豆好吃。",
+    "DESCRIPTIONS": [
+      "你每在同一回合内打出 #b3 张 #y元素牌 ，获得 #b1 点 #y元素精通 。"
+    ]
+  },
+  "TheWitch:AlternateDimensionalPocket": {
+  "NAME": "异次元口袋",
+  "FLAVOR": "帮帮我吧，快帮帮我吧...",
+  "DESCRIPTIONS": [
+    "在战斗开始时，将一张随机 #y元素牌 加入到你的抽牌堆，并且在本场战斗中耗能为 #b0 。"
+   ]
+  },
+  "TheWitch:WaterGun": {
+    "NAME": "滋水枪",
+    "FLAVOR": "只有一把，而且只有你自己。",
+    "DESCRIPTIONS": [
+      "你每打出一张非元素牌都会给予随机 #y元素 。"
+    ]
+  }
+}

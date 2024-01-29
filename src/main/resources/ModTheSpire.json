@@ -1,0 +1,17 @@
+{
+  "modid": "TheWitch",
+  "name": "魔女",
+  "author_list": [
+    "依巴",
+    "天宇"
+  ],
+  "description": "添加了一位角色：魔女。",
+  "dependencies": [
+    "basemod",
+    "stslib"
+  ],
+  "version": "1.0.0",
+  "credits": "图一乐即可，玩得开心才是最重要的！",
+  "sts_version": "12-18-2022",
+  "mts_version": "3.24.0"
+}
