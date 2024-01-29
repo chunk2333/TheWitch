@@ -1,8 +1,8 @@
 package power;
 //水元素
 
+import TheWitch.TheWitch;
 import Tools.YiBaHelper;
-import YibaMod.YibaMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -72,7 +72,7 @@ public class HydroPower extends AbstractPower {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         isHasHydroAndPyro = false;
         AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "蒸发", Color.RED.cpy()));
-        YibaMod.logger.info("水元素：触发裸蒸发");
+        TheWitch.logger.info("水元素：触发裸蒸发");
         //通知元素反应遗物
         if (!ArrayElementRelic.getElementRelic().isEmpty()) {
             for (ElementRelic r : ArrayElementRelic.getElementRelic()) {

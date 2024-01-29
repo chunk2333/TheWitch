@@ -1,6 +1,6 @@
 package Tools;
 
-import YibaMod.YibaMod;
+import TheWitch.TheWitch;
 import cards.element.AnemoCard;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -67,27 +67,27 @@ public class YiBaHelper {
 
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
-            if(c.hasTag(YibaMod.ELEMENT)){
+            if(c.hasTag(TheWitch.ELEMENT)){
                 list.add(c);
             }
         }
         for (AbstractCard c : AbstractDungeon.srcUncommonCardPool.group) {
-            if(c.hasTag(YibaMod.ELEMENT)){
+            if(c.hasTag(TheWitch.ELEMENT)){
                 list.add(c);
             }
         }
         for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
-            if(c.hasTag(YibaMod.ELEMENT)){
+            if(c.hasTag(TheWitch.ELEMENT)){
                 list.add(c);
             }
         }
         for (AbstractCard c : AbstractDungeon.srcColorlessCardPool.group) {
-            if(c.hasTag(YibaMod.ELEMENT)){
+            if(c.hasTag(TheWitch.ELEMENT)){
                 list.add(c);
             }
         }
         for (AbstractCard c : AbstractDungeon.srcCurseCardPool.group) {
-            if(c.hasTag(YibaMod.ELEMENT)){
+            if(c.hasTag(TheWitch.ELEMENT)){
                 list.add(c);
             }
         }
@@ -198,7 +198,7 @@ public class YiBaHelper {
     public static void setBlindBoxRelic(String relicId){
 
         BlindBoxRelicId = relicId;
-        YibaMod.logger.info(BlindBoxRelicId);
+        TheWitch.logger.info(BlindBoxRelicId);
     }
 
     public static String getBlindBoxRelic(){
@@ -208,7 +208,7 @@ public class YiBaHelper {
     public static void setTempRelic(String relicId){
 
         TempRelicId = relicId;
-        YibaMod.logger.info(TempRelicId);
+        TheWitch.logger.info(TempRelicId);
     }
 
     public static String getTempRelic(){
@@ -218,7 +218,7 @@ public class YiBaHelper {
     public static void setTempRelic2(String relicId){
 
         TempRelicId2 = relicId;
-        YibaMod.logger.info(TempRelicId2);
+        TheWitch.logger.info(TempRelicId2);
     }
 
     public static String getTempRelic2(){

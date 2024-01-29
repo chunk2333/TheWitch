@@ -1,13 +1,11 @@
 package power;
 //岩元素
+import TheWitch.TheWitch;
 import Tools.YiBaHelper;
-import YibaMod.YibaMod;
 import com.badlogic.gdx.Gdx;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -99,7 +97,7 @@ public class GeoPower extends AbstractPower {
         for(AbstractPower power:this.owner.powers){
             if(power.ID.equals("PyroPower")){
                 this.isMultiple = power.canGoNegative;
-                YibaMod.logger.info("触发熔岩，是否是多段伤害：" + this.isMultiple + "是否已经触发了一次多段：" + this.isMultipleActive);
+                TheWitch.logger.info("触发熔岩，是否是多段伤害：" + this.isMultiple + "是否已经触发了一次多段：" + this.isMultipleActive);
 
                 //移除火元素
                 addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "PyroPower"));
@@ -107,7 +105,7 @@ public class GeoPower extends AbstractPower {
                 addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
                 //怪物头顶显示元素反应类型
                 AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "熔岩", Color.GOLD.cpy()));
-                YibaMod.logger.info("触发熔岩：" + damageAmount * 2 + "额外伤害："+ this.mystery);
+                TheWitch.logger.info("触发熔岩：" + damageAmount * 2 + "额外伤害："+ this.mystery);
                 if(this.isMultiple && !this.isMultipleActive){
                     //给予易伤
                     //addToBot(new ApplyPowerAction(this.owner, AbstractDungeon.player, new VulnerablePower(this.owner, 1, false), 1));

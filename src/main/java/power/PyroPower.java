@@ -1,19 +1,17 @@
 package power;
 //火元素
 
+import TheWitch.TheWitch;
 import Tools.YiBaHelper;
-import YibaMod.YibaMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.InvinciblePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -82,7 +80,7 @@ public class PyroPower extends AbstractPower {
     }
 
     public void triggerElementreaction() {
-        YibaMod.logger.info("火元素：触发裸蒸发");
+        TheWitch.logger.info("火元素：触发裸蒸发");
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "HydroPower"));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         isHasHydroAndPyro = false;
@@ -179,7 +177,7 @@ public class PyroPower extends AbstractPower {
                     }
                 }
                 AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "蒸发", Color.RED.cpy()));
-                YibaMod.logger.info("触发2.0蒸发：" + (damageAmount * 2 + this.mystery));
+                TheWitch.logger.info("触发2.0蒸发：" + (damageAmount * 2 + this.mystery));
                 YiBaHelper.setLastTriggerElement("蒸发", "2.0蒸发");
                 int InvincibleNum = 0;
                 boolean hasInvincible = false;
@@ -218,7 +216,7 @@ public class PyroPower extends AbstractPower {
                     }
                 }
                 AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "蒸发", Color.RED.cpy()));
-                YibaMod.logger.info("触发2.0蒸发：" + (damageAmount * 2 + this.mystery));
+                TheWitch.logger.info("触发2.0蒸发：" + (damageAmount * 2 + this.mystery));
                 YiBaHelper.setLastTriggerElement("蒸发", "2.0蒸发");
             }
             int InvincibleNum = 0;
@@ -257,7 +255,7 @@ public class PyroPower extends AbstractPower {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         if (this.isMultiple && !this.isMultipleActive) {
             AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "蒸发", Color.RED.cpy()));
-            YibaMod.logger.info("触发1.5蒸发：" + (damageAmount * 1.5 + this.mystery));
+            TheWitch.logger.info("触发1.5蒸发：" + (damageAmount * 1.5 + this.mystery));
             AbstractDungeon.player.gainEnergy(1);
             this.isMultipleActive = true;
             if (!ArrayElementRelic.getElementRelic().isEmpty()) {
@@ -298,7 +296,7 @@ public class PyroPower extends AbstractPower {
         }
         if (!this.isMultiple) {
             AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.owner.drawX, this.owner.drawY, "蒸发", Color.RED.cpy()));
-            YibaMod.logger.info("触发1.5蒸发：" + (damageAmount * 1.5 + this.mystery));
+            TheWitch.logger.info("触发1.5蒸发：" + (damageAmount * 1.5 + this.mystery));
             AbstractDungeon.player.gainEnergy(1);
             if (!ArrayElementRelic.getElementRelic().isEmpty()) {
                 for (ElementRelic r : ArrayElementRelic.getElementRelic()) {

@@ -1,5 +1,6 @@
 package TheWitch;
 
+import Tools.YiBaHelper;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import cards.colorless.*;
@@ -21,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import patchs.AbstractCardEnum;
 import cards.element.*;
 import patchs.ThmodClassEnum;
+import relics.Witch.*;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -48,10 +50,6 @@ public class TheWitch implements EditCharactersSubscriber, EditRelicsSubscriber,
     public static final Color SILVER = CardHelper.getColor(200, 200, 200);
     private final ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
     public static ArrayList<AbstractCard> recyclecards = new ArrayList<>();
-    //遗物选择界面
-    private static final List<AbstractGameAction> actionList = new ArrayList<>();
-    private static final List<AbstractGameAction> offScreenActionList = new ArrayList<>();
-
     public static final Logger logger = LogManager.getLogger(TheWitch.class.getName());
 
     @SpireEnum public static AbstractCard.CardTags ELEMENT;
@@ -70,13 +68,12 @@ public class TheWitch implements EditCharactersSubscriber, EditRelicsSubscriber,
     public TheWitch(){
         BaseMod.subscribe(this);
         BaseMod.addColor(AbstractCardEnum.Witch_COLOR, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, SILVER, ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
-
     }
 
     @Override
     public void receiveEditCharacters() {
         //添加角色到MOD中
-        BaseMod.addCharacter(new Witch("Witch"), MY_CHARACTER_BUTTON, MARISA_PORTRAIT, ThmodClassEnum.Witch_CLASS);
+        BaseMod.addCharacter(new Witch("魔女"), MY_CHARACTER_BUTTON, MARISA_PORTRAIT, ThmodClassEnum.Witch_CLASS);
     }
 
     public static void initialize() {
@@ -205,9 +202,9 @@ public class TheWitch implements EditCharactersSubscriber, EditRelicsSubscriber,
             relic = "localization/relics-zh.json";
             power = "localization/powers-zh.json";
             potion = "localization/potions-zh.json";
-            event = "localization/events-zh.json";
+            //event = "localization/events-zh.json";
             ui = "localization/uis-zh.json";
-            monster = "localization/monsters-zh.json";
+            //monster = "localization/monsters-zh.json";
         }  //其他语言配置的JSON
 
         String relicStrings = Gdx.files.internal(relic).readString(String.valueOf(StandardCharsets.UTF_8));
@@ -218,20 +215,34 @@ public class TheWitch implements EditCharactersSubscriber, EditRelicsSubscriber,
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
         String potionStrings = Gdx.files.internal(potion).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
-        String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+//        String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
+//        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
         String uiStrings = Gdx.files.internal(ui).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
-        String monsterStrings = Gdx.files.internal(monster).readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
+//        String monsterStrings = Gdx.files.internal(monster).readString(String.valueOf(StandardCharsets.UTF_8));
+//        BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
 
     }
 
     @Override
-    public void receiveEditRelics() {}
+    public void receiveEditRelics() {
+        //---------------魔女遗物-----------------------
+        //BaseMod.addRelicToCustomPool(new TestTriggerElement(), AbstractCardEnum.Witch_COLOR);//元素反应测试遗物
+        BaseMod.addRelicToCustomPool(new cLanguageProgramBegin(), AbstractCardEnum.Witch_COLOR);
+        BaseMod.addRelicToCustomPool(new HighLevelMagicBook(), AbstractCardEnum.Witch_COLOR); //很高级的魔导书----魔女专属Boss遗物
+        BaseMod.addRelicToCustomPool(new NaturalQuenchedStaff(), AbstractCardEnum.Witch_COLOR); //自然淬炼之杖----魔女专属稀有遗物
+        BaseMod.addRelicToCustomPool(new TheLastCoin(), AbstractCardEnum.Witch_COLOR); //最后的一枚硬币
+        BaseMod.addRelicToCustomPool(new BlackCat(), AbstractCardEnum.Witch_COLOR); //黑猫
+        BaseMod.addRelicToCustomPool(new Fructose(), AbstractCardEnum.Witch_COLOR); //果儿糖
+        BaseMod.addRelicToCustomPool(new AlternateDimensionalPocket(), AbstractCardEnum.Witch_COLOR); //异次元口袋
+        BaseMod.addRelicToCustomPool(new WaterGun(), AbstractCardEnum.Witch_COLOR); //滋水枪
+        //---------------魔女遗物-----------------------
+    }
 
     @Override
-    public void receiveAddAudio() {}
+    public void receiveAddAudio() {
+        BaseMod.addAudio(YiBaHelper.MakeSoundPath("DaMie"),"sound/AatroxR.ogg");
+    }
 
     @Override
     public void receivePostEnergyRecharge() {

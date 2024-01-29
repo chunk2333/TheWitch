@@ -1,5 +1,6 @@
 package characters;
 
+import TheWitch.TheWitch;
 import Tools.YiBaHelper;
 import basemod.abstracts.CustomPlayer;
 import cards.element.FireBall;
@@ -52,25 +53,25 @@ public class Witch extends CustomPlayer {
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
         initializeClass(SELES_STAND, SELES_SHOULDER_2, SELES_SHOULDER_1, SELES_CORPSE,
-                         getLoadout(),
-                         0.0F, 5.0F, 240.0F, 300.0F,
-                         new EnergyManager(ENERGY_PER_TURN));
+                getLoadout(),
+                0.0F, 5.0F, 240.0F, 300.0F,
+                new EnergyManager(ENERGY_PER_TURN));
     }
 
     @Override
     public ArrayList<String> getStartingDeck() {
         //添加初始卡组
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("Strike_Seles");
-        retVal.add("Strike_Seles");
-        retVal.add("Strike_Seles");
-        retVal.add("Strike_Seles");
-        retVal.add("Defend_Seles");
-        retVal.add("Defend_Seles");
-        retVal.add("Defend_Seles");
-        retVal.add("Defend_Seles");
-        retVal.add("FireBall");
-        retVal.add("WaterWaveTechnique");
+        retVal.add(TheWitch.makeID("Strike_Seles"));
+        retVal.add(TheWitch.makeID("Strike_Seles"));
+        retVal.add(TheWitch.makeID("Strike_Seles"));
+        retVal.add(TheWitch.makeID("Strike_Seles"));
+        retVal.add(TheWitch.makeID("Defend_Seles"));
+        retVal.add(TheWitch.makeID("Defend_Seles"));
+        retVal.add(TheWitch.makeID("Defend_Seles"));
+        retVal.add(TheWitch.makeID("Defend_Seles"));
+        retVal.add(TheWitch.makeID("FireBall"));
+        retVal.add(TheWitch.makeID("WaterWaveTechnique"));
         //retVal.add("Printf");
         return retVal;
     }
@@ -79,8 +80,8 @@ public class Witch extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         //添加初始遗物
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("cLanguageProgramBegin");
-        UnlockTracker.markRelicAsSeen("cLanguageProgramBegin");
+        retVal.add("TheWitch:cLanguageProgramBegin");
+        UnlockTracker.markRelicAsSeen("TheWitch:cLanguageProgramBegin");
         return retVal;
     }
 

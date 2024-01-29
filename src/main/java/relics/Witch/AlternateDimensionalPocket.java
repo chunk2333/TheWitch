@@ -33,7 +33,9 @@ public class AlternateDimensionalPocket extends CustomRelic {
     public void atBattleStartPreDraw() {
         flash();
         AbstractCard card = YiBaHelper.getRandomElementCard();
-        card.cost = 0;
+        if(!card.cardID.equals("TheWitch:ShakeTheWorld")){
+            card.cost = 0;
+        }
         card.current_x = -1000.0F * Settings.xScale;
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, true));
